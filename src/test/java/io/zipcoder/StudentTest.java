@@ -10,8 +10,7 @@ public class StudentTest {
 
     @Test
     public void testSetFirstName() {
-        ArrayList<Double> scores = new ArrayList<>();
-        Student student = new Student("Deepti", "", scores);
+        Student student = new Student("Deepti", "", new Double[]{100.0, 95.0, 123.0, 96.0});
         String expected = "Deepti";
 
         // When
@@ -26,7 +25,7 @@ public class StudentTest {
     @Test
     public void testSetLastName() {
         ArrayList<Double> scores = new ArrayList<>();
-        Student student = new Student("Deepti", "Mishra", scores);
+        Student student = new Student("Deepti", "Mishra", new Double[]{100.0, 95.0, 123.0, 96.0});
         String expected = "Mishra";
 
         // When
@@ -43,9 +42,23 @@ public class StudentTest {
         int expected = 0;
         //when
         ArrayList<Double> scores = new ArrayList<>();
-        Student student = new Student("Deepti", "Mishra", scores);
+        Student student = new Student("Deepti", "Mishra", new Double[]{100.0, 95.0, 123.0, 96.0});
         int actual = student.getNumberOfExamsTaken();
 
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetExamScores() {
+        String firstName = "Leon";
+        String lastName = "Hunter";
+        ArrayList<Double> examScores = new ArrayList<>();
+        Student student = new Student("Leon", "Hunter", new Double [] { 100.0, 95.0, 123.0, 96.0 });
+
+        // When
+        String output = student.getExamScores();
+
+        // Then
+        System.out.println(output);
     }
 }
