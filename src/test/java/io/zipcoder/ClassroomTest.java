@@ -84,4 +84,17 @@ public class ClassroomTest {
         System.out.println("===========================");
         System.out.println(postRemovalString);
     }
+
+//    @Test
+//    public void sortByScores() {
+//        // : Given
+//        Double[] examScores = {100.0, 150.0, 250.0, 0.0};
+//        Student student1 = new Student("Leon", "Hunter", examScores);
+//        Student student2 = new Student("Deepti", "Mishra", examScores);
+//        Student student3 = new Student("Dash", "Flach", examScores);
+//        Student[] students = {student1, student2, student3};
+//        Classroom classroom = new Classroom(students);
+//        System.out.print(classroom.getStudentsByScore());
+//    }
+
 }
