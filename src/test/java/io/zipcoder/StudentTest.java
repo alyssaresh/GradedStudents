@@ -56,4 +56,57 @@ public class StudentTest {
         // Then
         System.out.println(output);
     }
+
+    @Test
+    public void addExamScoreTest(){
+        String firstName = "Leon";
+        String lastName = "Hunter";
+        Double[] examScores = { 100.0, 95.0, 123.0, 96.0 };
+        Student student = new Student(firstName, lastName, examScores);
+
+        // When
+        student.addExamScore(98.0);
+        String output = student.getExamScores();
+
+        // Then
+        System.out.println(output);
+    }
+
+    @Test
+    public void setExamScoreTest(){
+        String firstName = "Deepti";
+        String lastName = "Mishra";
+        Double[] examScores = { 100.00, 98.00, 85.00};
+        Student deepti = new Student(firstName, lastName, examScores);
+
+        deepti.setExamScore(1, 95.00);
+        String output = deepti.getExamScores();
+
+        System.out.println(output);
+    }
+
+    @Test
+    public void getAverageExamScoreTest(){
+        String firstName = "Deepti";
+        String lastName = "Mishra";
+        Double[] examScores = { 100.00, 80.00, 90.00, 75.00};
+        Student deepti = new Student(firstName, lastName, examScores);
+
+        double expected = 86.25;
+        double actual = deepti.getAverageExamScore();
+
+        Assert.assertEquals(expected, actual, 0.001);
+    }
+
+    @Test
+    public void getStudentString(){
+        String firstName = "Deepti";
+        String lastName = "Mishra";
+        Double[] examScores = { 100.00, 80.00, 90.00, 75.00};
+        Student deepti = new Student(firstName, lastName, examScores);
+
+        String actual = deepti.toString();
+
+        System.out.print(actual);
+    }
 }
